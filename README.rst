@@ -14,8 +14,7 @@ In this repository 'Vagrantfile' will deploy 6 machines:
 You can take Jenkins '**admin**' password in the Jenkins master server from file '/var/lib/jenkins/secrets/initialAdminPassword'
 Jenkins master server listens on port **8080** Nexus listens on port **8081**.
 
-``Gogs admin login: **gogs**
-``Gogs admin login password: **gogspassword**
+Gogs admin login: **gogs** |br| Gogs admin login password: **gogspassword**
 
 =====
 Usage
