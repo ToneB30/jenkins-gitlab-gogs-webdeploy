@@ -27,3 +27,6 @@ Usage
     # git clone https://github.com/jamalshahverdiev/jenkins-gitlab-gogs-webdeploy.git
     # cd jenkins-gitlab-gogs-webdeploy
     # vagrant up
+
+
+Note: Do not forget to change public adapter driver in the 'Vagrantfile' to your own name.
