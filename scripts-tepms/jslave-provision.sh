@@ -27,9 +27,9 @@ checkver
 
 JenkinsUserSSHKey () {
     sudo adduser --disabled-password --gecos "" $1 --shell /bin/bash
-    sudo mkdir /home/jenkins/jenkins_slave /home/jenkins/.ssh
-    sudo cp /vagrant/gitlab.pub /home/jenkins/.ssh/authorized_keys
-    sudo chown -R $1:$1 /home/jenkins/jenkins_slave
+    sudo mkdir /home/$1/$1_slave /home/$1/.ssh
+    sudo cp /vagrant/gitlab.pub /home/$1/.ssh/authorized_keys
+    sudo chown -R $1:$1 /home/$1/$1_slave
 }
 
 awsinstall () {
