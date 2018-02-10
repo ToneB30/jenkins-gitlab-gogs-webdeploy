@@ -4,7 +4,9 @@ Jenkins with 2 slaves, Nexus, GitLab and GoGS
 
 .. image:: https://cdn.rawgit.com/odb/official-bash-logo/master/assets/Logos/Identity/PNG/BASH_logo-transparent-bg-color.png
 
+
 In this repository 'Vagrantfile' will deploy 6 machines: 
+
 * Jenkins master (Same time Nexus)
 * Jenkins slave node1
 * Jenkins slave node2
