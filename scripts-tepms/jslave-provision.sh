@@ -24,7 +24,14 @@ checkver () {
 }
  
 checkver
- 
+
+JenkinsUserSSHKey () {
+    sudo adduser --disabled-password --gecos "" $1 --shell /bin/bash
+    sudo mkdir /home/jenkins/jenkins_slave /home/jenkins/.ssh
+    sudo cp /vagrant/gitlab.pub /home/jenkins/.ssh/authorized_keys
+    sudo chown -R $1:$1 /home/jenkins/jenkins_slave
+}
+
 awsinstall () {
     apt-get install -y python-pip maven awscli
     pip install --upgrade pip
@@ -39,6 +46,7 @@ dockerinstall () {
     add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
     apt-get update && apt-get install -y docker-ce
     usermod -aG docker ubuntu
+    usermod -aG docker jenkins
 }
 # Username 'jslave' and password will be created in the master server and '192.168.106.100' is the IP address of the Jenkins Master server.
 swarm_slave_connector (){
@@ -55,6 +63,7 @@ then
     yum upgrade -y
 elif [ "$relver" = "Ubuntu" ]
 then
+    JenkinsUserSSHKey jenkins
     swarm_slave_connector
     awsinstall
     dockerinstall
